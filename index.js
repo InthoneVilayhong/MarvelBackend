@@ -11,6 +11,10 @@ app.use(formidable());
 //***********************ROUTES **************************/
 const comics = require("./routes/comics");
 app.use(comics);
+const characters = require("./routes/characters");
+app.use(characters);
+const character = require("./routes/character");
+app.use(character);
 
 app.get("/", async (req, res) => {
     res.json("Welcome to my Marvel Project");
