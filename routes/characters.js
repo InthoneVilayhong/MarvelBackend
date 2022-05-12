@@ -3,9 +3,6 @@ const router = express.Router();
 const axios = require("axios");
 require("dotenv").config();
 const apiKey = process.env.API_KEY;
-const cors = require("cors");
-
-app.use(cors());
 
 //************************ ROUTE /Character  Pour recuperer tous les characters******************/
 
