@@ -11,6 +11,7 @@ app.use(cors());
 
 router.get("/characters", async (req, res) => {
     try {
+        ("Access-Control-Allow-Origin: http://localhost:3000");
         const response = await axios.get(
             `https://lereacteur-marvel-api.herokuapp.com/characters?apiKey=${apiKey}`
         );
