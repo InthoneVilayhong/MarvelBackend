@@ -4,13 +4,12 @@ const axios = require("axios");
 require("dotenv").config();
 const apiKey = process.env.API_KEY;
 
-//************************ ROUTE /Character  Pour recuperer tous les characters******************/
+//************************ ROUTE /Characters  Pour recuperer tous les characters******************/
 
 router.get("/characters", async (req, res) => {
-    req.query.name ? (name = req.query.name) : (name = "");
     try {
         const response = await axios.get(
-            `https://lereacteur-marvel-api.herokuapp.com/characters?apiKey=${apiKey}&name=${name}`
+            `https://lereacteur-marvel-api.herokuapp.com/characters?apiKey=${apiKey}&name=${req.query.name}&skip=${req.query.skip}`
         );
 
         res.status(200).json(response.data);

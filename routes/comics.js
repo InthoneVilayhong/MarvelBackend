@@ -6,10 +6,9 @@ const apiKey = process.env.API_KEY;
 
 //************************ ROUTE /comics Pour récupérer tous les comics ******************/
 router.get("/comics", async (req, res) => {
-    req.query.title ? (title = req.query.title) : (title = "");
     try {
         const response = await axios.get(
-            `https://lereacteur-marvel-api.herokuapp.com/comics?apiKey=${apiKey}&title=${title}`
+            `https://lereacteur-marvel-api.herokuapp.com/comics?apiKey=${apiKey}&title=${req.query.title}&skip=${req.query.skip}`
         );
 
         res.json(response.data);
