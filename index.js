@@ -20,6 +20,10 @@ const character = require("./routes/character");
 app.use(character);
 const user = require("./routes/user");
 app.use(user);
+const favorisComics = require("./routes/favorisComics");
+app.use(favorisComics);
+const deleteComicsFavori = require("./routes/deleteComicsFavori");
+app.use(deleteComicsFavori);
 
 app.get("/", async (req, res) => {
     res.json("Welcome to my Marvel Project");
