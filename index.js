@@ -8,7 +8,8 @@ const mongoose = require("mongoose");
 
 app.use(cors());
 app.use(formidable());
-mongoose.connect("mongodb://localhost:27017/marvel");
+require("dotenv").config();
+mongoose.connect(process.env.MONGODB_URI);
 
 //***********************ROUTES **************************/
 const comics = require("./routes/comics");
