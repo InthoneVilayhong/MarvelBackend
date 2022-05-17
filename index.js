@@ -24,6 +24,8 @@ const favorisComics = require("./routes/favorisComics");
 app.use(favorisComics);
 const deleteComicsFavori = require("./routes/deleteComicsFavori");
 app.use(deleteComicsFavori);
+const getFavorisComics = require("./routes/getFavorisComics");
+app.use(getFavorisComics);
 
 app.get("/", async (req, res) => {
     res.json("Welcome to my Marvel Project");
